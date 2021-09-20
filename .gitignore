@@ -1,4 +1,4 @@
 note
 back/node_modules
-back/package*
+back/package-lock.json
 back/config.js
