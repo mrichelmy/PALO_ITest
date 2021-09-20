@@ -1,5 +1,5 @@
 //GLOBAL VARIABLES
-var cities = {"lyon": 0, "paris" : 0, "marseille" : 0, "toulouse" : 0, "lille" : 0, "bordeaux" : 0};
+export var cities = {"Lyon": 0, "Paris" : 0, "Marseille" : 0, "Toulouse" : 0, "Lille" : 0, "Bordeaux" : 0};
 
 // FUNCTIONS
 
@@ -7,6 +7,7 @@ var displayTags = () => {
   const arrayOfWords = $(".enterZone").val().toLowerCase().split(" ");
   var updateText = "";
   arrayOfWords.forEach(word => {
+    word = word.charAt(0).toUpperCase() + word.slice(1)
     if(Object.keys(cities).includes(word) && cities[word] === 0) {
       var tag = "\
       <div class='control "+ word+"Tag'>\

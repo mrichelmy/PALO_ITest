@@ -12,6 +12,19 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+router.post('/city', async (req, res, next) => {
+    try {
+      if(req.body.cityList.length == 0 || req.body.cityList == undefined) {
+        res.json(await products.getAllProducts(req.query.page));
+      } else {
+        res.json(await products.getProductsByCity(req.body.cityList));
+      }
+    } catch (err) {
+      console.error(`Ups, error while getting products `, err.message);
+      next(err);
+    }
+  });
+
 router.post('/', async (req, res, next) => {
     try {
         res.json(await products.createProduct(req.body));

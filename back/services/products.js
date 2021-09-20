@@ -16,7 +16,22 @@ var getAllProducts = async (page = 1) => {
     meta,
     data
   }
-}
+};
+
+var getProductsByCity = async (cityList) => {
+  const rows = await db.query(
+    `SELECT * 
+    FROM Products
+    WHERE Ville IN (?)`, 
+    [cityList.toString()]
+  );
+
+  const data = helper.emptyOrRows(rows);
+
+  return {
+    data
+  }
+};
 
 var createProduct = async (newProduct) => {
     const result = await db.query(
@@ -68,5 +83,6 @@ module.exports = {
   getAllProducts, 
   createProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
+  getProductsByCity
 }
