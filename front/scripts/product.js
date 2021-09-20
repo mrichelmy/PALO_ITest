@@ -28,6 +28,10 @@ var updateTextZone = (newText) => {
   $(".enterZone").val(newText);
 };
 
+var displayForm = () => {
+  $('.addForm').show()
+}
+
 // BUTTONS
 $(".enterZoneButton").on('click',() => displayTags());
 
@@ -39,3 +43,5 @@ $('.tagZone').on('click', 'a.tag', function() {
   divTag.remove();
   updateTextZone(updateText);
 });
+
+$('.addProductButton').on('click', () => displayForm());

@@ -23,6 +23,14 @@ $('.searchProducts').on('click',() => {
                     <td>${product.Nom}</td>
                     <td>${product.Ville}</td>
                     <td>${product.Prix}</td>
+                    <td><button class="button">
+                            <span class="icon">
+                                <i class="fas fa-pen-alt"></i>
+                            </span></button></td>
+                    <td><button class="button">
+                            <span class="icon is-small">
+                            <i class="fas fa-trash-alt"></i>
+                            </span></button></td>
                 </tr>
                 `);                
             });
@@ -32,3 +40,27 @@ $('.searchProducts').on('click',() => {
         });
 });
 
+$('.submitProductButton').on('click',() => {
+    var productData = {
+        Nom : $('.nameValue').val(),
+        Ville : $('.cityValue').val(),
+        Prix : $('.priceValue').val()
+    }
+    console.log(productData)
+    $.ajax({
+        url: "http://localhost:3306/products/",
+        type: "POST",
+        contentType: "application/json",
+        crossDomain: true,
+        dataType: "json",
+        headers: {
+            'access-Control-Allow-Origin': '*'
+        },
+        data: JSON.stringify(productData)
+        })
+        .done( (response) => {
+            alert(response.message);
+            $('.addForm').hide()
+        })
+        .fail( (response) => { alert(JSON.stringify(response)) })
+});

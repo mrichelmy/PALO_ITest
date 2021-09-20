@@ -8,6 +8,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/70a10e0d33.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../css/product.css" />
   <!-- CSS -->
 
@@ -59,11 +60,39 @@
           <th>Nom Produit</th>
           <th>Ville</th>
           <th>Prix</th>
+          <th>Mise à jour</th>
+          <th>Suppression</th>
         </tr>
       </thead>
       <tbody class='tableBody'>
       </tbody>
     </table>
+    <button class="button addProductButton">Add</button>
+  </div>
+
+  <div class="box addForm">
+    <div class="field">
+      <label class="label">Nom</label>
+      <div class="control">
+        <input class="input nameValue" type="text" placeholder="Nom du produit">
+      </div>
+    </div>
+  
+    <div class="field">
+      <label class="label">Ville</label>
+      <div class="control">
+        <input class="input cityValue" type="text" placeholder="Lyon, Toulouse, Bordeaux, Paris, Marseille">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Prix</label>
+      <div class="control">
+        <input class="input priceValue" type="number" placeholder="42">
+      </div>
+    </div>
+  
+    <button class="button is-primary submitProductButton">Submit</button>
   </div>
 
 
