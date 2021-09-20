@@ -1,1 +1,4 @@
 note
+back/node_modules
+back/package*
+back/config.js
