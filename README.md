@@ -25,8 +25,8 @@ This is my work for my PALO IT application. It based on some different exercises
  - 'routes' folder : provision of services.
 
 **Routes** : 
- - '/' - GET : Get a list of all products ;
- - '/city' - POST : Get a list of products selected by a list of cities ;
- - '/' - POST : Add a new product ;
- - '/:ref' - PUT : Update an existing product ;
- - '/:red' - DELETE : Delete an existinf product.
+ - '/products' - GET : Get a list of all products ;
+ - '/products/city' - POST : Get a list of products selected by a list of cities ;
+ - '/products' - POST : Add a new product ;
+ - '/products/:ref' - PUT : Update an existing product ;
+ - '/products/:ref' - DELETE : Delete an existinf product.
