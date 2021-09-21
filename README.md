@@ -1,6 +1,6 @@
 # PALO_ITest
 ## Description
-This is my work for my PALO IT application. It based on some different exercises, they were intended to set up a partial application, based on web services.
+This is my work for my PALO IT application. It based on different exercises, they were intended to set up a partial application, based on web services.
 ## Front-end part
 **Techno** : html + jquery + Bulma (CSS)
 
@@ -37,13 +37,13 @@ My calculator is based on the *eval* function.  It is unappreciated by many deve
 ## Test
 **Techno** : Mocha framework
 
-I seperate front and back tests in two files, and we can run `npm test` from back folder to launch all tests. Only one back test has been implemented, my front test have a JQuery/Mocha compatibility error.
+I seperate front and back tests in two files, and we can run `npm test` from back folder to launch all tests. Only one back test has been implemented, my front test has a JQuery/Mocha compatibility error.
 
 ## Use case : 
  1. Filter tags from the input and display them ;
- 2. Search in the database all products filtered on the different cities tagged. If there is no tag, it will get all products ;
+ 2. Search in the database all products filtered by cities tagged. If there is no tag, it will get all products ;
  3. Add a new product with the form ;
  4. Calculate a string input and display the result.
  
 ## Conclusion
-Due to lack of time, I did not deal with some use case and my application had some bugs. But I think I have done enough of each parts to have something to discuss with you ! And I so sorry for the beauty of the page....
+Due to lack of time, I did not deal with some use cases and my application has some bugs. But I think I have done enough of each parts to have something to discuss with you ! And I so sorry for the beauty of the page....
