@@ -10,6 +10,9 @@ This is my work for my PALO IT application. It based on some different exercises
  - 'pages' folder : all pages whitch composed the application ;
  - 'scripts' folder : api calls and js scripts ;
 
+**Calculator** : 
+My calculator is based on the *eval* function.  It is unappreciated by many developers, due to it vulnaribility (js injection for example). But in this case, I think that we can use it, due to the restrictive ckeck done on the input string. It will be a pleasure to discuss it with you ! ;) 
+
 ## Back-end part
 **Techno** : Node.JS + Mysql
 
