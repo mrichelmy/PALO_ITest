@@ -13,7 +13,9 @@ This is my work for my PALO IT application. It based on some different exercises
 ## Back-end part
 **Techno** : Node.JS + Mysql
 
-**How to run it ?** : `node back/index.js` 
+**How to run it ?** : `node back/index.js`
+
+**Where** : On http://localhost:3306
 
 **Structure** : 
  - 'index.js' file : our backend server's root ;
