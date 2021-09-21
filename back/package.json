@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ../test/"
   },
   "keywords": [],
   "author": "Mathieu Richelmy",
@@ -14,5 +14,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql2": "^2.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.1"
   }
 }
