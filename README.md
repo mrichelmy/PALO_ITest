@@ -29,4 +29,9 @@ This is my work for my PALO IT application. It based on some different exercises
  - '/products/city' - POST : Get a list of products selected by a list of cities ;
  - '/products' - POST : Add a new product ;
  - '/products/:ref' - PUT : Update an existing product ;
- - '/products/:ref' - DELETE : Delete an existinf product.
+ - '/products/:ref' - DELETE : Delete an existing product.
+
+## Test
+**Techno** : Mocha framework
+
+I seperate front and back tests in two files, and we can run `npm test` from back folder to launch all tests. Only one back test has been implemented, my front test have a JQuery/Mocha compatibility error.
