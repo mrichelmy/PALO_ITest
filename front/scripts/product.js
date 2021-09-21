@@ -38,6 +38,12 @@ var displayForm = () => {
   $('.addForm').show();
 }
 
+var calculateFromString = () => {
+  var stringToCalculate = $('.calculateInput').val().replace(/[^-()\d/*+.]/g, '');
+  var result = eval(stringToCalculate);
+  $('.calculateInput').val(result);
+};
+
 /** BUTTONS */
 $(".enterZoneButton").on('click',() => displayTags());
 
@@ -52,6 +58,9 @@ $('.tagZone').on('click', 'a.tag', function() {
 
 $('.addProductButton').on('click', () => displayForm());
 
+$('.calulateInputButton').on('click', () => calculateFromString() );
+
+/** EXPORT */
 export {
   cities,
   addTag
