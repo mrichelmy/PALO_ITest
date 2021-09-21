@@ -1,29 +1,34 @@
-//GLOBAL VARIABLES
+/** GLOBAL VARIABLES */
 export var cities = {"Lyon": 0, "Paris" : 0, "Marseille" : 0, "Toulouse" : 0, "Lille" : 0, "Bordeaux" : 0};
 
-// FUNCTIONS
+/** FUNCTIONS */
 
 var displayTags = () => {
   const arrayOfWords = $(".enterZone").val().toLowerCase().split(" ");
   var updateText = "";
   arrayOfWords.forEach(word => {
     word = word.charAt(0).toUpperCase() + word.slice(1)
-    if(Object.keys(cities).includes(word) && cities[word] === 0) {
-      var tag = "\
-      <div class='control "+ word+"Tag'>\
-        <div class='tags has-addons'>\
-          <span class='tag is-danger'>"+word+"</span>\
-          <a class='tag is-delete' onclick></a>\
-        </div>\
-      </div>";
-      $(".tagZone").append(tag);
-      cities[word] = 1;
+    if(addTag(word))
       updateText = updateText + " " + word;
-    }
   });
   updateTextZone(updateText);
 };
 
+var addTag = (wordChecked) => {
+  if(Object.keys(cities).includes(wordChecked) && cities[wordChecked] === 0) {
+    var tag = "\
+    <div class='control "+ wordChecked+"Tag'>\
+      <div class='tags has-addons'>\
+        <span class='tag is-danger'>"+wordChecked+"</span>\
+        <a class='tag is-delete' onclick></a>\
+      </div>\
+    </div>";
+    $(".tagZone").append(tag);
+    cities[wordChecked] = 1;
+    return true;
+  }
+  return false;
+};
 var updateTextZone = (newText) => {
   $(".enterZone").val(newText);
 };
@@ -32,7 +37,7 @@ var displayForm = () => {
   $('.addForm').show()
 }
 
-// BUTTONS
+/** BUTTONS */
 $(".enterZoneButton").on('click',() => displayTags());
 
 $('.tagZone').on('click', 'a.tag', function() {
