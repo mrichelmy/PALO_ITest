@@ -1,7 +1,7 @@
 import { cities } from './product.js'
 
 $('.searchProducts').on('click',() => {
-    var cityTagged = Object.keys(cities).filter(c => cities[c] === 1) || []
+    var cityTagged = Object.keys(cities).filter(c => cities[c] === 1) || [];
     var cityData = {'cityList' : cityTagged};
     $.ajax({
         url: "http://localhost:3306/products/city",
@@ -15,7 +15,7 @@ $('.searchProducts').on('click',() => {
         data: JSON.stringify(cityData)
         })
         .done( (response) => {
-            $('.tableBody').html('')
+            $('.tableBody').html('');
             response.data.forEach(product => {
                 $('.tableBody').append(`
                 <tr>
@@ -45,8 +45,7 @@ $('.submitProductButton').on('click',() => {
         Nom : $('.nameValue').val(),
         Ville : $('.cityValue').val(),
         Prix : $('.priceValue').val()
-    }
-    console.log(productData)
+    };
     $.ajax({
         url: "http://localhost:3306/products/",
         type: "POST",
@@ -60,7 +59,7 @@ $('.submitProductButton').on('click',() => {
         })
         .done( (response) => {
             alert(response.message);
-            $('.addForm').hide()
+            $('.addForm').hide();
         })
-        .fail( (response) => { alert(JSON.stringify(response)) })
+        .fail( (response) => { alert(JSON.stringify(response)); });
 });

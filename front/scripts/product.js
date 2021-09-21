@@ -1,5 +1,5 @@
 /** GLOBAL VARIABLES */
-export var cities = {"Lyon": 0, "Paris" : 0, "Marseille" : 0, "Toulouse" : 0, "Lille" : 0, "Bordeaux" : 0};
+var cities = {"Lyon": 0, "Paris" : 0, "Marseille" : 0, "Toulouse" : 0, "Lille" : 0, "Bordeaux" : 0};
 
 /** FUNCTIONS */
 
@@ -7,7 +7,7 @@ var displayTags = () => {
   const arrayOfWords = $(".enterZone").val().toLowerCase().split(" ");
   var updateText = "";
   arrayOfWords.forEach(word => {
-    word = word.charAt(0).toUpperCase() + word.slice(1)
+    word = word.charAt(0).toUpperCase() + word.slice(1);
     if(addTag(word))
       updateText = updateText + " " + word;
   });
@@ -29,12 +29,13 @@ var addTag = (wordChecked) => {
   }
   return false;
 };
+
 var updateTextZone = (newText) => {
   $(".enterZone").val(newText);
 };
 
 var displayForm = () => {
-  $('.addForm').show()
+  $('.addForm').show();
 }
 
 /** BUTTONS */
@@ -50,3 +51,8 @@ $('.tagZone').on('click', 'a.tag', function() {
 });
 
 $('.addProductButton').on('click', () => displayForm());
+
+export {
+  cities,
+  addTag
+}
