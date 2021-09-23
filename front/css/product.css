@@ -1,5 +1,10 @@
-h1 {
+.titleBox {
     text-align: center;
+    background : linear-gradient(to right,
+    #05cc98 25% 38%, #38e068 38% 50%, #ffaf3b 50% 62%, #ef8035 62% 75% );
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .addForm {
