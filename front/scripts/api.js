@@ -61,5 +61,7 @@ $('.submitProductButton').on('click',() => {
             alert(response.message);
             $('.addForm').hide();
         })
-        .fail( (response) => { alert(JSON.stringify(response)); });
+        .fail( (response) => { 
+            alert(JSON.stringify(response));
+        });
 });

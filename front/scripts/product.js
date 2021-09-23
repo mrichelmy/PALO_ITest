@@ -59,5 +59,6 @@ $('.calulateInputButton').on('click', () => calculateFromString() );
 
 /** EXPORT */
 export {
-  cities
+  cities,
+  calculateFromString
 }
