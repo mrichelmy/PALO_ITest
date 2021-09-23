@@ -5,7 +5,7 @@ var cities = {"Lyon": 0, "Paris" : 0, "Marseille" : 0, "Toulouse" : 0, "Lille" :
 
 var displayTags = () => {
   const arrayOfWords = $(".enterZone").val().toLowerCase().split(" ");
-  var updateText = "";
+  var updateText = Object.keys(cities).filter( c => cities[c] === 1).toString();
   arrayOfWords.forEach(word => {
     word = word.charAt(0).toUpperCase() + word.slice(1);
     if(addTag(word))
