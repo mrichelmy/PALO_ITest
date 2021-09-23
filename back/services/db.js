@@ -1,12 +1,10 @@
-const mysql = require('mysql2/promise');
+const mysql = require('mysql/');
+const util = require('util');
 const config = require('../config');
 
-var query = async (sql, params) => {
-  const connection = await mysql.createConnection(config.db);
-  const [results, ] = await connection.execute(sql, params);
+const connection = mysql.createConnection(config.db);
+const query = util.promisify(connection.query).bind(connection);
 
-  return results;
-}
 
 module.exports = {
   query

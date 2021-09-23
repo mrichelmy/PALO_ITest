@@ -20,7 +20,7 @@ router.post('/city', async (req, res, next) => {
         res.json(await products.getProductsByCity(req.body.cityList));
       }
     } catch (err) {
-      console.error(`Ups, error while getting products `, err.message);
+      console.error(`Ups, error while getting products filtered by city \n `, err.message);
       next(err);
     }
   });

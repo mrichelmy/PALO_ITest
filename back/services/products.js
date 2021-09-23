@@ -23,9 +23,8 @@ var getProductsByCity = async (cityList) => {
     `SELECT * 
     FROM Products
     WHERE Ville IN (?)`, 
-    [cityList.toString()]
+    [cityList]
   );
-
   const data = helper.emptyOrRows(rows);
 
   return {
