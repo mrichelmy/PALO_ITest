@@ -5,13 +5,11 @@ var cities = {"Lyon": 0, "Paris" : 0, "Marseille" : 0, "Toulouse" : 0, "Lille" :
 
 var displayTags = () => {
   const arrayOfWords = $(".enterZone").val().toLowerCase().split(" ");
-  var updateText = Object.keys(cities).filter( c => cities[c] === 1).toString();
   arrayOfWords.forEach(word => {
-    word = word.charAt(0).toUpperCase() + word.slice(1);
-    if(addTag(word))
-      updateText = updateText + " " + word;
+    var wordProperNoun = word.charAt(0).toUpperCase() + word.slice(1);
+    addTag(wordProperNoun);
   });
-  updateTextZone(updateText);
+  updateTextZone();
 };
 
 var addTag = (wordChecked) => {
@@ -25,13 +23,12 @@ var addTag = (wordChecked) => {
     </div>";
     $(".tagZone").append(tag);
     cities[wordChecked] = 1;
-    return true;
   }
-  return false;
 };
 
-var updateTextZone = (newText) => {
-  $(".enterZone").val(newText);
+var updateTextZone = () => {
+  var finalText = Object.keys(cities).filter( c => cities[c] === 1).toString();
+  $(".enterZone").val(finalText);
 };
 
 var displayForm = () => {
@@ -42,6 +39,7 @@ var calculateFromString = () => {
   var stringToCalculate = $('.calculateInput').val().replace(/[^-()\d/*+.]/g, '');
   var result = eval(stringToCalculate);
   $('.calculateInput').val(result);
+  $('.priceValue').val(result);
 };
 
 /** BUTTONS */
@@ -49,11 +47,10 @@ $(".enterZoneButton").on('click',() => displayTags());
 
 $('.tagZone').on('click', 'a.tag', function() {
   var divTag= $(this).closest('div.control');
-  var word = divTag.context.previousElementSibling.innerText;
-  var updateText = $(".enterZone").val().replace(word,'');
-  cities[word] = 0;
+  var cityToDelete = divTag.context.previousElementSibling.innerText;
+  cities[cityToDelete] = 0;
   divTag.remove();
-  updateTextZone(updateText);
+  updateTextZone();
 });
 
 $('.addProductButton').on('click', () => displayForm());
@@ -62,6 +59,5 @@ $('.calulateInputButton').on('click', () => calculateFromString() );
 
 /** EXPORT */
 export {
-  cities,
-  addTag
+  cities
 }
