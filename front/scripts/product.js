@@ -4,13 +4,17 @@ var cities = {"Lyon": 0, "Paris" : 0, "Marseille" : 0, "Toulouse" : 0, "Lille" :
 /** FUNCTIONS */
 
 var displayTags = () => {
-  const arrayOfWords = $(".enterZone").val().toLowerCase().split(" ");
+  const arrayOfWords = $(".enterZone").val().split(" ");
   arrayOfWords.forEach(word => {
-    var wordProperNoun = word.charAt(0).toUpperCase() + word.slice(1);
+    var wordProperNoun = getWordProperNoum(word);
     addTag(wordProperNoun);
   });
   updateTextZone();
 };
+
+var getWordProperNoum = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
 
 var addTag = (wordChecked) => {
   if(Object.keys(cities).includes(wordChecked) && cities[wordChecked] === 0) {
@@ -33,7 +37,7 @@ var updateTextZone = () => {
 
 var displayForm = () => {
   $('.addForm').show();
-}
+};
 
 var calculateFromString = () => {
   var stringToCalculate = $('.calculateInput').val().replace(/[^-()\d/*+.]/g, '');
@@ -45,7 +49,7 @@ var calculateFromString = () => {
 /** BUTTONS */
 $(".enterZoneButton").on('click',() => displayTags());
 
-$('.tagZone').on('click', 'a.tag', function() {
+$(document).on('click', 'a.tag', function() {
   var divTag= $(this).closest('div.control');
   var cityToDelete = divTag.context.previousElementSibling.innerText;
   cities[cityToDelete] = 0;
@@ -60,5 +64,6 @@ $('.calulateInputButton').on('click', () => calculateFromString() );
 /** EXPORT */
 export {
   cities,
-  calculateFromString
+  calculateFromString,
+  getWordProperNoum
 }

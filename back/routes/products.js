@@ -45,7 +45,7 @@ router.put('/:ref', async (req, res, next) => {
 
 router.delete('/:ref', async (req, res, next) => {
     try {
-        res.json(await products.removeProduct(req.params.ref));
+        res.json(await products.deleteProduct(req.params.ref));
     } catch (err) {
         console.error(`Error while deleting product`, err.message);
         next(err);
